@@ -1,0 +1,59 @@
+.wrap {
+  padding: 0 clamp(16px, 4vw, 32px) clamp(16px, 3vw, 26px);
+}
+.pill {
+  max-width: 760px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--app-card);
+  border: 1px solid var(--app-line);
+  border-radius: 99px;
+  padding: 7px 7px 7px 20px;
+  box-shadow: var(--app-shadow);
+  transition: border-color 0.18s;
+}
+.pill:focus-within {
+  border-color: var(--app-border-green);
+}
+.pillListening {
+  border-color: var(--app-cta);
+  box-shadow: 0 0 0 3px var(--app-soft);
+}
+.input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-size: 14.5px;
+  font-family: inherit;
+  color: var(--app-ink);
+  min-width: 0;
+  min-height: 40px;
+}
+.input:focus {
+  outline: none;
+}
+.input::placeholder {
+  color: var(--app-ink-3);
+}
+.send {
+  width: 40px;
+  height: 40px;
+  border-radius: 99px;
+  background: var(--app-cta);
+  border: none;
+  color: var(--app-cta-ink);
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  flex: none;
+  transition: transform 0.15s, box-shadow 0.15s;
+  box-shadow: 0 4px 14px -6px var(--app-glow);
+}
+.send:hover {
+  transform: scale(1.06);
+}
+.send:active {
+  transform: scale(0.95);
+}

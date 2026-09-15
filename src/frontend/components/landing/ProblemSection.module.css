@@ -1,0 +1,140 @@
+.section {
+  background: var(--forest);
+  color: #fff;
+  padding: clamp(64px, 7vw, 100px) 0;
+}
+
+.animTitle {
+  max-width: 1020px;
+  animation: yk-reveal 0.7s var(--ease) 0.1s both;
+}
+.animSub {
+  max-width: 900px;
+  margin-bottom: 0;
+  animation: yk-reveal 0.7s var(--ease) 0.25s both;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: clamp(14px, 1.8vw, 22px);
+  margin-top: clamp(34px, 4vw, 52px);
+}
+.cardStat {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.04);
+  padding: clamp(24px, 3vw, 34px);
+  animation: yk-reveal 0.7s var(--ease) 0.4s both;
+  transition: transform 0.25s var(--ease), border-color 0.25s;
+}
+.cardStat:hover {
+  transform: translateY(-4px);
+  border-color: rgba(74, 222, 128, 0.4);
+}
+.cardStat:nth-child(2) {
+  animation-delay: 0.55s;
+}
+.cardLabel {
+  font: 500 13.5px/1.5 var(--font-mono);
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 0.1em;
+  margin-bottom: 18px;
+}
+.zero {
+  font: 700 clamp(72px, 8vw, 120px) / 1 var(--font-sans);
+  letter-spacing: -0.06em;
+  font-variant-numeric: tabular-nums;
+  transition: color 0.4s;
+}
+.cardNote {
+  margin-top: 20px;
+  font: 400 17.5px/1.55 var(--font-sans);
+  color: rgba(255, 255, 255, 0.6);
+  max-width: 340px;
+}
+.cardNote span {
+  color: #fff;
+}
+.quoteFr {
+  font: 500 clamp(19px, 1.8vw, 23px) / 1.5 var(--font-sans);
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+.divider {
+  margin: 14px 0;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+}
+.quoteBad {
+  font: 500 clamp(19px, 1.8vw, 23px) / 1.5 var(--font-sans);
+  letter-spacing: -0.02em;
+  color: rgba(248, 113, 113, 0.85);
+  text-decoration: line-through;
+  text-decoration-color: rgba(248, 113, 113, 0.45);
+  text-decoration-thickness: 2px;
+}
+
+.rotator {
+  margin-top: clamp(36px, 4.5vw, 60px);
+  font: 700 clamp(32px, 4.6vw, 64px) / 1.12 var(--font-sans);
+  letter-spacing: -0.05em;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 16px;
+  align-items: baseline;
+  text-wrap: balance;
+  animation: yk-reveal 0.7s var(--ease) 0.7s both;
+}
+.rotFaded {
+  color: rgba(255, 255, 255, 0.38);
+}
+.rotSlot {
+  position: relative;
+  display: inline-block;
+  min-width: 5.2em;
+}
+.rotWord {
+  color: var(--green-400);
+  display: inline-block;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  animation: yk-up 0.45s var(--ease);
+}
+.rotWhite {
+  color: #fff;
+}
+
+.closing {
+  margin-top: clamp(40px, 5vw, 68px);
+  padding-top: clamp(28px, 3.4vw, 40px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 14px 28px;
+  animation: yk-reveal 0.7s var(--ease) 0.85s both;
+}
+.closingQuote {
+  font: 400 clamp(38px, 5.4vw, 72px) / 1.08 var(--font-serif);
+  font-style: italic;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+  max-width: 820px;
+}
+.closingCta {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font: 600 16px/1 var(--font-sans);
+  color: var(--green-400);
+  white-space: nowrap;
+}
+.closingLine {
+  width: 34px;
+  height: 1px;
+  background: var(--green-500);
+}

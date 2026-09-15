@@ -1,0 +1,28 @@
+# --- Secrets : ne doivent JAMAIS être versionnés ---
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+
+# --- Dépendances et builds ---
+node_modules/
+.next/
+out/
+dist/
+build/
+*.tsbuildinfo
+next-env.d.ts
+
+# --- Modèles OCR téléchargés à l'exécution (tesseract.js) ---
+*.traineddata
+*.traineddata.gz
+
+# --- Système ---
+.DS_Store
+Thumbs.db
+*.log
+
+# --- Références de design : déjà versionnées sous forme de .zip à la racine,
+# l'extraction (18 Mo de vidéos et images) n'a pas à être dupliquée ici ---
+design-reference/

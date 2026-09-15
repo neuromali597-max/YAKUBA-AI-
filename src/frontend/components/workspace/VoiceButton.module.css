@@ -1,0 +1,54 @@
+.btn {
+  flex: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 99px;
+  background: var(--app-hover);
+  border: 1px solid transparent;
+  color: var(--app-ink-2);
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: all 0.18s var(--ease);
+}
+.btn:hover {
+  color: var(--app-link);
+  border-color: var(--app-border-green);
+}
+.icon {
+  width: 19px;
+  height: 19px;
+}
+
+/* En écoute : pastille verte + halo qui pulse */
+.btnOn {
+  background: var(--app-cta);
+  color: var(--app-cta-ink);
+  border-color: transparent;
+  animation: yk-mic-halo 1.8s ease-out infinite;
+}
+@keyframes yk-mic-halo {
+  0% {
+    box-shadow: 0 0 0 0 var(--app-glow);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(0, 230, 118, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 230, 118, 0);
+  }
+}
+
+.waves {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  height: 16px;
+}
+.wave {
+  width: 2.5px;
+  height: 100%;
+  border-radius: 2px;
+  background: var(--app-cta-ink);
+  animation: yk-wave 0.9s ease-in-out infinite;
+}

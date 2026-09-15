@@ -1,0 +1,221 @@
+.scroll {
+  flex: 1;
+  overflow-y: auto;
+  animation: yk-up 0.25s ease;
+}
+.inner {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: clamp(28px, 5vw, 44px) clamp(16px, 4vw, 32px);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.title {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--app-ink);
+}
+
+.langRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.langSrc {
+  flex: 1;
+  background: var(--app-card);
+  border: 1px solid var(--app-line-2);
+  border-radius: 99px;
+  padding: 10px;
+  font-size: 13.5px;
+  font-weight: 600;
+  text-align: center;
+  color: var(--app-ink);
+}
+.langDst {
+  flex: 1;
+  background: var(--app-cta);
+  border-radius: 99px;
+  padding: 10px;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--app-cta-ink);
+  text-align: center;
+}
+.swap {
+  width: 42px;
+  height: 42px;
+  border-radius: 99px;
+  background: var(--app-soft-2);
+  border: none;
+  color: var(--app-link);
+  font-size: 18px;
+  cursor: pointer;
+  flex: none;
+  transition: transform 0.2s, background 0.15s;
+}
+.swap:hover {
+  background: var(--app-soft);
+}
+.swap:active {
+  transform: rotate(180deg);
+}
+
+/* Sélecteur Texte / Photo */
+.modes {
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  background: var(--app-hover);
+  border-radius: 12px;
+  align-self: flex-start;
+}
+.mode {
+  border: none;
+  background: none;
+  padding: 9px 16px;
+  border-radius: 9px;
+  font-size: 13px;
+  font-weight: 500;
+  font-family: inherit;
+  color: var(--app-ink-2);
+  cursor: pointer;
+  transition: all 0.18s var(--ease);
+  min-height: 40px;
+}
+.mode:hover {
+  color: var(--app-ink);
+}
+.modeOn {
+  background: var(--app-card);
+  color: var(--app-link);
+  font-weight: 700;
+  box-shadow: var(--app-shadow);
+}
+
+.inputHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.inputCard {
+  background: var(--app-card);
+  border: 1px solid var(--app-line-2);
+  border-radius: 18px;
+  padding: 18px;
+  transition: border-color 0.18s;
+}
+.inputCard:focus-within {
+  border-color: var(--app-border-green);
+}
+.inputLabel {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: var(--app-ink-3);
+}
+.textarea {
+  width: 100%;
+  border: none;
+  background: transparent;
+  font-size: 16px;
+  font-family: inherit;
+  color: var(--app-ink);
+  resize: none;
+  line-height: 1.55;
+  box-sizing: border-box;
+}
+.textarea:focus {
+  outline: none;
+}
+.textarea::placeholder {
+  color: var(--app-ink-3);
+}
+
+.translateBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: var(--app-cta);
+  border: none;
+  border-radius: 99px;
+  padding: 14px;
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--app-cta-ink);
+  font-family: inherit;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
+  box-shadow: 0 6px 18px -8px var(--app-glow);
+  min-height: 48px;
+}
+.translateBtn:hover:enabled {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px -8px var(--app-glow);
+}
+.translateBtn:active:enabled {
+  transform: scale(0.99);
+}
+.spinner {
+  width: 15px;
+  height: 15px;
+  border: 2px solid rgba(5, 32, 19, 0.3);
+  border-top-color: var(--app-cta-ink);
+  border-radius: 50%;
+  animation: yk-spin 0.7s linear infinite;
+}
+
+.resultCard {
+  background: linear-gradient(160deg, var(--app-grad-a), var(--app-grad-b));
+  border: 1px solid var(--app-border-green);
+  border-radius: 18px;
+  padding: 18px;
+  animation: yk-up 0.3s ease;
+}
+.resultLabel {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: var(--app-link);
+  margin-bottom: 8px;
+}
+.resultText {
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--app-ink);
+  font-weight: 500;
+}
+.resultActions {
+  display: flex;
+  gap: 18px;
+  margin-top: 14px;
+}
+.resultAction {
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: inherit;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--app-link);
+  cursor: pointer;
+}
+.resultAction:hover {
+  text-decoration: underline;
+}
+.resultActionSoft {
+  color: var(--app-ink-2);
+}
+
+.note {
+  font-size: 11px;
+  color: var(--app-ink-3);
+  text-align: center;
+}

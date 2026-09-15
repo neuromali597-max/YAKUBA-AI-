@@ -1,0 +1,61 @@
+/* Interface post-connexion — tout en tokens (voir .yk-app dans globals.css) */
+.shell {
+  height: 100dvh;
+  display: flex;
+  background: var(--app-bg);
+  color: var(--app-ink);
+  overflow: hidden;
+  font-family: var(--font-sans);
+  transition: background 0.25s, color 0.25s;
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+/* Barre mobile (sidebar en tiroir sous 960px) */
+.mobileBar {
+  display: none;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  background: var(--app-card);
+  border-bottom: 1px solid var(--app-line-2);
+  min-height: 58px;
+}
+.menuBtn,
+.mobileNew {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  border: 1px solid var(--app-line-2);
+  background: var(--app-card);
+  font-size: 16px;
+  color: var(--app-ink-2);
+  cursor: pointer;
+  transition: border-color 0.15s;
+}
+.menuBtn:hover,
+.mobileNew:hover {
+  border-color: var(--app-border-green);
+}
+.mobileNew {
+  color: var(--app-link);
+  font-weight: 700;
+}
+.mobileTitle {
+  flex: 1;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--app-ink);
+}
+
+@media (max-width: 959px) {
+  .mobileBar {
+    display: flex;
+  }
+}

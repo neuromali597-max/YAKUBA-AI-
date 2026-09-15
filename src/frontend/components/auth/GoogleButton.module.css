@@ -1,0 +1,41 @@
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  background: #fff;
+  border: 1px solid #d8dcd8;
+  padding: 14px;
+  border-radius: 999px;
+  font: 600 15.5px/1 var(--font-sans);
+  color: var(--ink);
+  cursor: pointer;
+  transition: all 0.2s var(--ease);
+  min-height: 52px;
+}
+.btn:hover:enabled {
+  border-color: var(--ink);
+  box-shadow: 0 6px 18px -10px rgba(17, 24, 39, 0.3);
+  transform: translateY(-1px);
+}
+.btn:disabled {
+  opacity: 0.75;
+  cursor: default;
+}
+
+.logo {
+  width: 20px;
+  height: 20px;
+  flex: none;
+}
+
+.spinner {
+  width: 18px;
+  height: 18px;
+  flex: none;
+  border: 2px solid rgba(17, 24, 39, 0.2);
+  border-top-color: var(--ink);
+  border-radius: 50%;
+  animation: yk-spin 0.7s linear infinite;
+}

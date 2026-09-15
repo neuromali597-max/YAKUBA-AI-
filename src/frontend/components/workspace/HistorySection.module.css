@@ -1,0 +1,141 @@
+.scroll {
+  flex: 1;
+  overflow-y: auto;
+  animation: yk-up 0.25s ease;
+}
+.inner {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: clamp(28px, 5vw, 44px) clamp(16px, 4vw, 32px);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.title {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--app-ink);
+}
+.newBtn {
+  border: 1px solid var(--app-line);
+  background: var(--app-card);
+  border-radius: 99px;
+  padding: 9px 16px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--app-link);
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.15s;
+  min-height: 40px;
+}
+.newBtn:hover {
+  border-color: var(--app-border-green);
+}
+
+.search {
+  background: var(--app-card);
+  border: 1px solid var(--app-line);
+  border-radius: 99px;
+  padding: 12px 18px;
+  font-size: 13.5px;
+  font-family: inherit;
+  color: var(--app-ink);
+  min-height: 46px;
+  transition: border-color 0.18s;
+}
+.search:focus {
+  outline: none;
+  border-color: var(--app-border-green);
+}
+.search::placeholder {
+  color: var(--app-ink-3);
+}
+
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+  padding: 60px 20px;
+  border: 1px dashed var(--app-line);
+  border-radius: 18px;
+  background: var(--app-soft);
+}
+.emptyTitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--app-ink);
+}
+.emptyHint {
+  font-size: 13px;
+  color: var(--app-ink-2);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.item {
+  background: var(--app-card);
+  border: 1px solid var(--app-line-2);
+  border-radius: 13px;
+  padding: 13px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: border-color 0.15s;
+}
+.item:hover {
+  border-color: var(--app-border-green);
+}
+.itemMain {
+  flex: 1;
+  min-width: 0;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: inherit;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.itemTitle {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--app-ink);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.itemDate {
+  font-size: 11px;
+  color: var(--app-ink-3);
+}
+.delete {
+  background: none;
+  border: none;
+  color: var(--app-ink-3);
+  font-size: 17px;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 8px;
+  transition: color 0.15s, background 0.15s;
+}
+.delete:hover {
+  color: var(--app-danger);
+  background: var(--app-hover);
+}

@@ -1,0 +1,391 @@
+.section {
+  padding: clamp(64px, 7vw, 100px) 0;
+  background: var(--surface-2);
+  border-top: 1px solid var(--line-2);
+  border-bottom: 1px solid var(--line-2);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: clamp(18px, 2.6vw, 40px);
+  align-items: stretch;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--line);
+}
+.item {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--line);
+  border-left: 2px solid transparent;
+  padding: 16px 14px 16px 18px;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+  color: var(--muted);
+}
+.itemOn {
+  background: #fff;
+  border-left-color: var(--green-600);
+  color: var(--ink);
+}
+.itemRow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+}
+.itemTag {
+  flex: none;
+  font: 700 11px/1 var(--font-mono);
+  letter-spacing: 0.06em;
+  width: 44px;
+  text-align: left;
+  transition: color 0.15s;
+  color: var(--muted-2);
+}
+.itemTagOn {
+  color: var(--green-600);
+}
+.itemTitle {
+  flex: 1;
+  text-align: left;
+  font: 700 20px/1.25 var(--font-sans);
+  letter-spacing: -0.03em;
+}
+.itemBadge {
+  flex: none;
+  font: 600 10px/1 var(--font-mono);
+  color: var(--muted);
+  background: var(--line-2);
+  padding: 5px 8px;
+  border-radius: 6px;
+  letter-spacing: 0.08em;
+}
+.itemBody {
+  display: block;
+  margin-top: 7px;
+  padding-left: 58px;
+  font: 400 16px/1.55 var(--font-sans);
+  color: var(--muted);
+  text-align: left;
+  animation: yk-up 0.22s ease;
+}
+.itemBar {
+  display: block;
+  margin: 12px 0 0 58px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--line);
+  overflow: hidden;
+}
+.itemBarFill {
+  display: block;
+  height: 100%;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--green-600), var(--green-400));
+  transition: width 0.1s linear;
+}
+
+/* Panneau sombre de démonstration */
+.panel {
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 22px;
+  background: linear-gradient(165deg, #10281a, #0b1d11 60%);
+  box-shadow: 0 34px 70px -38px rgba(8, 35, 18, 0.75), inset 0 1px 0 rgba(255, 255, 255, 0.07);
+  padding: clamp(22px, 2.8vw, 30px);
+  min-height: 340px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.panelGlow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 75% 55% at 85% -5%, rgba(74, 222, 128, 0.2), transparent 65%);
+  pointer-events: none;
+}
+.panelDots {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 20px 20px;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, #000 20%, transparent 80%);
+  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, #000 20%, transparent 80%);
+  pointer-events: none;
+}
+.panelHead {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin: -6px -6px 18px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.winDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.14);
+}
+.panelUrl {
+  margin-left: 8px;
+  font: 500 11px/1 var(--font-mono);
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 0.05em;
+}
+.liveTag {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font: 700 9.5px/1 var(--font-mono);
+  letter-spacing: 0.12em;
+  color: var(--green-400);
+}
+.liveDot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--green-500);
+  box-shadow: 0 0 8px rgba(34, 197, 94, 0.9);
+}
+
+.demo {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  animation: yk-up 0.22s var(--ease);
+  flex: 1;
+}
+.demoLabel {
+  font: 600 11.5px/1 var(--font-mono);
+  color: var(--green-400);
+  letter-spacing: 0.12em;
+  margin-bottom: 8px;
+}
+.demoUserMsg {
+  align-self: flex-end;
+  max-width: 84%;
+  background: #fff;
+  color: var(--ink);
+  padding: 11px 14px;
+  border-radius: 14px 14px 4px 14px;
+  font: 500 14px/1.5 var(--font-sans);
+  box-shadow: 0 8px 20px -10px rgba(0, 0, 0, 0.5);
+  animation: yk-up 0.28s ease 0.05s both;
+}
+.demoBotRow {
+  display: flex;
+  gap: 9px;
+  max-width: 92%;
+  animation: yk-up 0.28s ease 0.3s both;
+}
+.demoAvatar {
+  flex: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #fff;
+  object-fit: cover;
+  display: block;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.demoBotMsg {
+  background: rgba(34, 197, 94, 0.13);
+  border: 1px solid rgba(74, 222, 128, 0.35);
+  padding: 11px 14px;
+  border-radius: 4px 14px 14px 14px;
+  font: 500 14px/1.6 var(--font-sans);
+  color: var(--green-200);
+}
+.demoNote {
+  margin-top: auto;
+  padding-top: 12px;
+  font: 400 13.5px/1.5 var(--font-sans);
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.langBox {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  padding: 14px 16px;
+  background: rgba(255, 255, 255, 0.06);
+}
+.langBoxGreen {
+  border-color: rgba(74, 222, 128, 0.4);
+  background: rgba(34, 197, 94, 0.12);
+  box-shadow: 0 0 24px -8px rgba(34, 197, 94, 0.35);
+}
+.langBoxLabel {
+  font: 600 10px/1 var(--font-mono);
+  letter-spacing: 0.12em;
+  color: rgba(255, 255, 255, 0.4);
+  margin-bottom: 7px;
+}
+.langBoxLabelGreen {
+  color: var(--green-400);
+}
+.langBoxText {
+  font: 500 15.5px/1.45 var(--font-sans);
+  color: #fff;
+}
+.langBoxTextGreen {
+  font: 500 15.5px/1.45 var(--font-sans);
+  color: var(--green-200);
+  min-height: 22px;
+}
+.caret {
+  color: var(--green-400);
+  animation: yk-caret 0.8s step-end infinite;
+}
+.arrowRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 9px 0 9px 18px;
+}
+.arrowLine {
+  width: 1.5px;
+  height: 20px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.25), var(--green-400));
+}
+.arrowLabel {
+  font: 600 10px/1 var(--font-mono);
+  letter-spacing: 0.1em;
+  color: var(--green-400);
+}
+
+.genChips {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+.genChipOn {
+  background: var(--green-500);
+  color: #062812;
+  border-radius: 999px;
+  padding: 8px 14px;
+  font: 700 12.5px/1 var(--font-sans);
+  box-shadow: 0 4px 14px -4px rgba(34, 197, 94, 0.7);
+}
+.genChip {
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.5);
+  border-radius: 999px;
+  padding: 8px 14px;
+  font: 500 12.5px/1 var(--font-sans);
+}
+.genBox {
+  min-height: 92px;
+  padding: 15px 17px;
+}
+.genGloss {
+  font: 400 12.5px/1.55 var(--font-sans);
+  color: rgba(255, 255, 255, 0.55);
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px dashed rgba(74, 222, 128, 0.3);
+  animation: yk-up 0.25s ease;
+}
+
+.ctxChips {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+.ctxChip {
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 500;
+  font-family: var(--font-sans);
+  font-size: 12.5px;
+  line-height: 1;
+  padding: 9px 15px;
+  border-radius: 999px;
+  transition: all 0.2s var(--ease);
+}
+.ctxChipOn {
+  background: var(--green-500);
+  color: #062812;
+  font-weight: 700;
+  box-shadow: 0 4px 14px -4px rgba(34, 197, 94, 0.7);
+  font-family: var(--font-sans);
+  font-size: 12.5px;
+  line-height: 1;
+  padding: 9px 15px;
+  border-radius: 999px;
+  transition: all 0.2s var(--ease);
+}
+.ctxBox {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  padding: 16px 18px;
+  background: rgba(255, 255, 255, 0.06);
+  min-height: 74px;
+}
+.ctxText {
+  font: 500 16.5px/1.55 var(--font-sans);
+  color: #fff;
+  animation: yk-up 0.22s ease;
+}
+.ctxNote {
+  font: 400 13px/1.5 var(--font-sans);
+  color: rgba(255, 255, 255, 0.5);
+  margin-top: 8px;
+}
+
+.voxDemo {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  text-align: center;
+  animation: yk-up 0.22s var(--ease);
+}
+.voxBadge {
+  font: 600 10.5px/1 var(--font-mono);
+  letter-spacing: 0.16em;
+  color: rgba(255, 255, 255, 0.55);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 7px 12px;
+  border-radius: 999px;
+  margin-bottom: 20px;
+}
+.voxWave {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  height: 44px;
+  margin-bottom: 20px;
+}
+.voxBar {
+  width: 5px;
+  height: 38px;
+  border-radius: 3px;
+  animation: yk-wave 1s ease-in-out infinite;
+}
+.voxTitle {
+  font: 700 20px/1.25 var(--font-sans);
+  letter-spacing: -0.025em;
+  color: #fff;
+  margin-bottom: 8px;
+}
+.voxBody {
+  font: 400 14px/1.55 var(--font-sans);
+  color: rgba(255, 255, 255, 0.5);
+  max-width: 300px;
+}

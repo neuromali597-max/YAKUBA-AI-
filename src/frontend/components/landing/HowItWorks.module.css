@@ -1,0 +1,205 @@
+.section {
+  padding: clamp(64px, 7vw, 100px) 0;
+  background: #fff;
+}
+
+.rail {
+  position: relative;
+  height: 2px;
+  border-radius: 2px;
+  background: #edefed;
+  margin: 0 8px 26px;
+}
+.railFill {
+  position: absolute;
+  inset: 0;
+  border-radius: 2px;
+  transform-origin: left;
+  background: linear-gradient(90deg, var(--green-600), var(--green-400));
+  transition: transform 0.12s linear;
+}
+.railDot {
+  position: absolute;
+  top: -4px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--green-400);
+  box-shadow: 0 0 12px rgba(74, 222, 128, 0.9), 0 0 0 3px rgba(74, 222, 128, 0.2);
+  transition: left 0.12s linear;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: clamp(12px, 1.6vw, 20px);
+}
+
+.card {
+  position: relative;
+  display: block;
+  text-align: left;
+  border-radius: 22px;
+  padding: 20px;
+  cursor: pointer;
+  border: 1px solid #edefed;
+  background: var(--surface-2);
+  box-shadow: none;
+  transition: all 0.2s var(--ease);
+  opacity: 0.72;
+}
+.card:hover {
+  transform: translateY(-3px);
+  opacity: 1;
+}
+.cardOn {
+  border-color: var(--green-100);
+  background: linear-gradient(180deg, #fdfffe, #f7fefa);
+  box-shadow: 0 18px 40px -24px rgba(22, 163, 74, 0.45);
+  opacity: 1;
+}
+
+.num {
+  display: inline-block;
+  font: 700 12px/1 var(--font-mono);
+  letter-spacing: 0.08em;
+  padding: 6px 9px;
+  border-radius: 7px;
+  transition: all 0.2s;
+  background: var(--line-2);
+  color: var(--muted-2);
+}
+.numOn {
+  background: var(--green-600);
+  color: #fff;
+  box-shadow: 0 4px 10px -4px rgba(22, 163, 74, 0.6);
+}
+
+.cardTitle {
+  display: block;
+  font: 700 19.5px/1.25 var(--font-sans);
+  letter-spacing: -0.03em;
+  color: var(--ink);
+  margin: 12px 0 7px;
+}
+.cardBody {
+  display: block;
+  font: 400 15.5px/1.55 var(--font-sans);
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+
+.inputDemo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 10px 14px;
+  box-shadow: 0 4px 12px -8px rgba(17, 24, 39, 0.2);
+}
+.inputDemoText {
+  flex: 1;
+  text-align: left;
+  font: 500 13px/1.3 var(--font-sans);
+  color: var(--ink);
+  min-height: 17px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.caret {
+  color: var(--green-600);
+  animation: yk-caret 0.8s step-end infinite;
+}
+.inputDemoSend {
+  flex: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 999px;
+  background: var(--green-600);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font: 700 12px/1 var(--font-sans);
+}
+
+.chips {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.chipItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 999px;
+  padding: 8px 12px;
+  font: 600 12px/1 var(--font-mono);
+  letter-spacing: 0.03em;
+  transition: all 0.25s var(--ease);
+  background: #f7f8f7;
+  border: 1px solid #edefed;
+  color: #b5bab5;
+}
+.chipItemOn {
+  background: var(--green-50);
+  border-color: var(--green-200);
+  color: var(--green-700);
+}
+.chipDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex: none;
+  transition: background 0.25s;
+  background: #d8dcd8;
+}
+.chipDotOn {
+  background: var(--green-500);
+}
+
+.tiles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  min-height: 66px;
+  align-content: flex-start;
+}
+.tile {
+  background: var(--green-50);
+  border: 1px solid var(--green-100);
+  color: var(--green-700);
+  border-radius: 8px;
+  padding: 8px 11px;
+  font: 600 13px/1 var(--font-sans);
+  animation: yk-up 0.25s var(--ease);
+}
+
+.answer {
+  display: block;
+  background: linear-gradient(180deg, #f7fefa, var(--green-50));
+  border: 1px solid var(--green-100);
+  border-radius: 12px;
+  padding: 12px 14px;
+  text-align: left;
+  animation: yk-up 0.3s var(--ease);
+}
+.answerBm {
+  display: block;
+  font: 600 13.5px/1.5 var(--font-sans);
+  color: var(--green-900);
+}
+.answerGloss {
+  display: block;
+  font: 400 12px/1.5 var(--font-sans);
+  color: var(--muted);
+  margin-top: 6px;
+  padding-top: 6px;
+  border-top: 1px dashed var(--green-100);
+}
+.answerWait {
+  display: block;
+  min-height: 78px;
+}
